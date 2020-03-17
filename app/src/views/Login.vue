@@ -45,8 +45,8 @@ export default {
     data() {
       return {
         form: {
-            email: "eve.holt@reqres.in",
-            password: "cityslicka",
+            email: "admin@admin.com",
+            password: "12345",
         }
       }
     },
