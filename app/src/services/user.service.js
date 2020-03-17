@@ -57,7 +57,7 @@ const UserService = {
 
     const requestData = {
       method: 'post',
-      url: '/o/token/',
+      url: '/token/',
       data: {
         grant_type: 'refresh_token',
         refresh_token: refreshToken

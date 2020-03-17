@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <app-header/>
-    <router-view></router-view>
+    <component :is="this.$route.meta.layout || 'div'">
+      <router-view />
+    </component>
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
 
 export default {
   name: 'app',
@@ -14,9 +14,6 @@ export default {
     return{
       appName: process.env.VUE_APP_NAME
     }
-  },
-  components: {
-    'app-header' : Header
   }
 }
 </script>
