@@ -2,11 +2,19 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import { sync } from 'vuex-router-sync'
 import VueMeta from 'vue-meta'
-import router from './router'
-import store from './store'
+// import router from './router'
+// import store from './store'
 import ApiService from './services/api.service'
 import TokenService from './services/storage.service'
 import filters from './filters'
+
+import '@/plugins/veevalidate'
+import '@/plugins/common'
+// import '@/plugins/axios'
+import i18n from '@/plugins/i18n'
+import router from '@/router'
+import { store } from '@/store'
+
 import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -21,8 +29,8 @@ if (TokenService.getToken()) {
   ApiService.setHeader()
 }
 
-//Global filters
-Vue.use(filters);
+// Global filters
+Vue.use(filters)
 
 Vue.use(BootstrapVue)
 
@@ -31,11 +39,18 @@ Vue.use(VueMeta, {
   refreshOnceOnNavigation: true
 })
 
-//Sync vue-router's current $route as part of vuex store's state.
+// Sync vue-router's current $route as part of vuex store's state.
 sync(store, router)
 
 new Vue({
   store,
   router,
-  render: h => h(App)
+  i18n,
+  render: h => h(App),
+  created() {
+    store.dispatch('setLocale', store.getters.locale)
+    // if (store.getters.isTokenSet) {
+    //   store.dispatch('autoLogin')
+    // }
+  }
 }).$mount('#app')

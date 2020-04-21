@@ -2,7 +2,7 @@ import ApiService from './api.service'
 import TokenService from './storage.service'
 
 class AuthenticationError extends Error {
-  constructor (errorCode, message) {
+  constructor(errorCode, message) {
     super(message)
     this.name = this.constructor.name
     this.message = message
@@ -12,17 +12,17 @@ class AuthenticationError extends Error {
 
 const UserService = {
   /**
-     * Login the user and store the access token to TokenService.
-     *
-     * @returns access_token
-     * @throws AuthenticationError
-    **/
-  login: async function (email, password) {
+   * Login the user and store the access token to TokenService.
+   *
+   * @returns access_token
+   * @throws AuthenticationError
+   **/
+  login: async function(email, password) {
     const requestData = {
       method: 'post',
       url: 'login/',
       data: {
-        grant_type: 'password',
+        grant_type: 'password', // eslint-disable-line
         email: email,
         password: password
       },
@@ -34,7 +34,10 @@ const UserService = {
 
     try {
       const response = await ApiService.customRequest(requestData)
-      response.data.access_token = response.data.refresh_token = response.data.token // remove after testing
+      /* start remove after testing */ // eslint-disable-next-line
+      response.data.access_token = response.data.refresh_token =
+        response.data.token
+      /* end remove after testing */
       TokenService.saveToken(response.data.access_token)
       TokenService.saveRefreshToken(response.data.refresh_token)
       ApiService.setHeader()
@@ -45,22 +48,25 @@ const UserService = {
 
       return response.data.access_token
     } catch (error) {
-      throw new AuthenticationError(error.response.status, error.response.data.detail)
+      throw new AuthenticationError(
+        error.response.status,
+        error.response.data.errors.msg
+      )
     }
   },
 
   /**
-     * Refresh the access token.
-    **/
-  refreshToken: async function () {
+   * Refresh the access token.
+   **/
+  refreshToken: async function() {
     const refreshToken = TokenService.getRefreshToken()
 
     const requestData = {
       method: 'post',
       url: '/token/',
       data: {
-        grant_type: 'refresh_token',
-        refresh_token: refreshToken
+        grant_type: 'refresh_token', // eslint-disable-line
+        refresh_token: refreshToken // eslint-disable-line
       },
       auth: {
         username: process.env.VUE_APP_CLIENT_ID,
@@ -78,16 +84,19 @@ const UserService = {
 
       return response.data.access_token
     } catch (error) {
-      throw new AuthenticationError(error.response.status, error.response.data.detail)
+      throw new AuthenticationError(
+        error.response.status,
+        error.response.data.errors.msg
+      )
     }
   },
 
   /**
-     * Logout the current user by removing the token from storage.
-     *
-     * Will also remove `Authorization Bearer <token>` header from future requests.
-    **/
-  logout () {
+   * Logout the current user by removing the token from storage.
+   *
+   * Will also remove `Authorization Bearer <token>` header from future requests.
+   **/
+  logout() {
     // Remove the token and remove Authorization header from Api Service as well
     TokenService.removeToken()
     TokenService.removeRefreshToken()

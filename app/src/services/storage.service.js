@@ -8,38 +8,37 @@ const REFRESH_TOKEN_KEY = 'refresh_token'
  *
  * Current implementation stores to localStorage. Local Storage should always be
  * accessed through this instace.
-**/
+ **/
 const TokenService = {
-  getToken () {
+  getToken() {
     // return localStorage.getItem(TOKEN_KEY)
     return Cookies.get(TOKEN_KEY)
   },
 
-  saveToken (accessToken) {
+  saveToken(accessToken) {
     // localStorage.setItem(TOKEN_KEY, accessToken)
     Cookies.set(TOKEN_KEY, accessToken)
   },
 
-  removeToken () {
+  removeToken() {
     // localStorage.removeItem(TOKEN_KEY)
     Cookies.remove(TOKEN_KEY)
   },
 
-  getRefreshToken () {
+  getRefreshToken() {
     // return localStorage.getItem(REFRESH_TOKEN_KEY)
     return Cookies.get(REFRESH_TOKEN_KEY)
   },
 
-  saveRefreshToken (refreshToken) {
+  saveRefreshToken(refreshToken) {
     // localStorage.setItem(REFRESH_TOKEN_KEY, refreshToken)
     Cookies.set(REFRESH_TOKEN_KEY, refreshToken)
   },
 
-  removeRefreshToken () {
+  removeRefreshToken() {
     // localStorage.removeItem(REFRESH_TOKEN_KEY)
     Cookies.remove(REFRESH_TOKEN_KEY)
   }
-
 }
 
 export default TokenService

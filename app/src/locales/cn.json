@@ -1,0 +1,60 @@
+{
+  "messages": {
+    "email": "需要有效的電子郵件",
+    "required": "此字段為必填",
+    "password": "需要密碼",
+    "min": "此字段不得少於 {length} 個字符",
+    "url": "必須是有效的網址",
+    "confirmed": "密碼必須匹配"
+  },
+  "errors": {
+    "BAD_TOKEN": "无效的签名",
+    "WRONG_PASSWORD": "密码错误",
+    "USER_DOES_NOT_EXIST": "用户不存在",
+    "PASSWORDS_DONT_MATCH": "您输入的密码不正确",
+    "PASSWORD_TOO_SHORT_MIN_5": "您输入的密码过短，最少5个字符",
+    "BLOCKED_USER": "登录错误次数太多，您的账号临时被封禁",
+    "SERVER_TIMEOUT_CONNECTION_ERROR": "服务出现错误",
+    "404": "页面没有找到",
+    "EMAIL_IS_NOT_VALID": "您的邮箱不正确",
+    "IS_EMPTY": "您输入的内容为空",
+    "ERROR": "系统错误",
+    "MISSING": "您提交的内容有误，请重试",
+    "NOT_FOUND_OR_ALREADY_VERIFIED": "不存在或者已经验证过",
+    "NOT_FOUND_OR_ALREADY_USED": "不存在或已经使用过",
+    "NOT_FOUND": "页面没有找到",
+    "UNAUTHORIZED": "您的账号没有通过验证",
+    "EMAIL_ALREADY_EXISTS": "您输入的邮箱已存在",
+    "ID_MALFORMED": "您的账号异常",
+    "ERROR_WITH_FILTER": "筛选错误",
+    "CITY_ALREADY_EXISTS": "城市已存在"
+  },
+  "common": {
+    "DELETE": "删除",
+    "CANCEL": "取消",
+    "WARNING": "警告",
+    "DO_YOU_REALLY_WANT_TO_DELETE_THIS_ITEM": "您确定要删除吗?",
+    "CLOSE": "关闭",
+    "SAVED_SUCCESSFULLY": "保存成功",
+    "DELETED_SUCCESSFULLY": "删除成功",
+    "CREATED": "创建于",
+    "UPDATED": "更新于",
+    "GO_BACK": "返回"
+  },
+  "loading": {
+    "PLEASE_WAIT": "请您耐心等待..."
+  },
+  "footer": {
+    "MADE_WITH": "Made With",
+    "BY": "by"
+  },
+  "myProfile": {
+    "TITLE": "个人中心"
+  },
+  "login": {
+    "TITLE": "登录",
+    "EMAIL": "邮箱",
+    "PASSWORD": "密码",
+    "LOGIN": "登录"
+  }
+}

@@ -1,6 +1,6 @@
-import { UserService, AuthenticationError } from '../../services/user.service'
-import TokenService from '../../services/storage.service'
-import router from '../../router'
+import { UserService, AuthenticationError } from '@/services/user.service'
+import TokenService from '@/services/storage.service'
+import router from '@/router'
 
 const state = {
   authenticating: false,
@@ -11,29 +11,29 @@ const state = {
 }
 
 const getters = {
-  loggedIn: (state) => {
+  loggedIn: state => {
     return !!state.accessToken
   },
 
-  authenticationErrorCode: (state) => {
+  authenticationErrorCode: state => {
     return state.authenticationErrorCode
   },
 
-  authenticationError (state) {
+  authenticationError(state) {
     return state.authenticationError
   },
 
-  authenticationSuccess (state) {
+  authenticationSuccess(state) {
     return state.authenticationSuccess
   },
 
-  authenticating: (state) => {
+  authenticating: state => {
     return state.authenticating
   }
 }
 
 const actions = {
-  async login ({ commit }, { email, password }) {
+  async login({ commit }, { email, password }) {
     commit('loginRequest')
     try {
       const token = await UserService.login(email, password)
@@ -44,13 +44,16 @@ const actions = {
       return true
     } catch (e) {
       if (e instanceof AuthenticationError) {
-        commit('loginError', { errorCode: e.errorCode, errorMessage: e.message })
+        commit('loginError', {
+          errorCode: e.errorCode,
+          errorMessage: e.message
+        })
       }
       return false
     }
   },
 
-  logout ({ commit }) {
+  logout({ commit }) {
     UserService.logout()
     commit('logoutSuccess')
     router.push('/login')
@@ -58,25 +61,25 @@ const actions = {
 }
 
 const mutations = {
-  loginRequest (state) {
+  loginRequest(state) {
     state.authenticating = true
     state.authenticationError = ''
     state.authenticationErrorCode = 0
   },
 
-  loginSuccess (state, accessToken) {
+  loginSuccess(state, accessToken) {
     state.accessToken = accessToken
     state.authenticationSuccess = true
     state.authenticating = false
   },
 
-  loginError (state, { errorCode, errorMessage }) {
+  loginError(state, { errorCode, errorMessage }) {
     state.authenticating = false
     state.authenticationErrorCode = errorCode
     state.authenticationError = errorMessage
   },
 
-  logoutSuccess (state) {
+  logoutSuccess(state) {
     state.accessToken = ''
   }
 }

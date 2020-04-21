@@ -1,0 +1,60 @@
+{
+  "messages": {
+    "email": "Valid email is required",
+    "required": "This field is required",
+    "password": "Password is required",
+    "min": "This field must have no less than {length} characters",
+    "url": "Must be a valid URL",
+    "confirmed": "Passwords must match"
+  },
+  "errors": {
+    "BAD_TOKEN": "Bad token",
+    "WRONG_PASSWORD": "Wrong password",
+    "USER_DOES_NOT_EXIST": "User does not exists",
+    "PASSWORDS_DONT_MATCH": "Passwords don´t match",
+    "PASSWORD_TOO_SHORT_MIN_5": "Password too short, minimum 5 characters",
+    "BLOCKED_USER": "Too many failed login attempts, user blocked temporarely",
+    "SERVER_TIMEOUT_CONNECTION_ERROR": "Server is not responding, connection error",
+    "404": "404 Page not found",
+    "EMAIL_IS_NOT_VALID": "E-mail not valid",
+    "IS_EMPTY": "Empty fields",
+    "ERROR": "Error",
+    "MISSING": "Missing fields",
+    "NOT_FOUND_OR_ALREADY_VERIFIED": "Not found or already verified",
+    "NOT_FOUND_OR_ALREADY_USED": "Not found or already used",
+    "NOT_FOUND": "Not found",
+    "UNAUTHORIZED": "Unauthorized",
+    "EMAIL_ALREADY_EXISTS": "E-mail already exists",
+    "ID_MALFORMED": "ID malformed",
+    "ERROR_WITH_FILTER": "Error with filter",
+    "CITY_ALREADY_EXISTS": "City already exists"
+  },
+  "common": {
+    "DELETE": "Delete",
+    "CANCEL": "Cancel",
+    "WARNING": "Warning",
+    "DO_YOU_REALLY_WANT_TO_DELETE_THIS_ITEM": "Do you really want to delete this item?",
+    "CLOSE": "Close",
+    "SAVED_SUCCESSFULLY": "Saved successfully",
+    "DELETED_SUCCESSFULLY": "Deleted successfully",
+    "CREATED": "Created At",
+    "UPDATED": "Updated At",
+    "GO_BACK": "Go back"
+  },
+  "loading": {
+    "PLEASE_WAIT": "Please wait..."
+  },
+  "footer": {
+    "MADE_WITH": "Made with",
+    "BY": "by"
+  },
+  "myProfile": {
+    "TITLE": "My profile"
+  },
+  "login": {
+    "TITLE": "Login",
+    "EMAIL": "E-mail",
+    "PASSWORD": "Password",
+    "LOGIN": "Login"
+  }
+}

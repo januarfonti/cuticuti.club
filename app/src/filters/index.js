@@ -1,8 +1,7 @@
-import uppercase from './upperCase';
-
+import uppercase from './upperCase'
 
 export default {
-    install(Vue) {
-        Vue.filter('uppercase', uppercase);
-    }
+  install(Vue) {
+    Vue.filter('uppercase', uppercase)
+  }
 }

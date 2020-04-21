@@ -1,0 +1,60 @@
+{
+  "messages": {
+    "email": "Se requiere correo electrónico válido",
+    "required": "Este campo es obligatorio",
+    "password": "Se requiere contraseña",
+    "min": "Este campo debe tener no menos de {length} caracteres",
+    "url": "Debe ser una URL válida",
+    "confirmed": "Las contraseñas deben coincidir"
+  },
+  "errors": {
+    "BAD_TOKEN": "Token malo",
+    "WRONG_PASSWORD": "Contraseña errada",
+    "USER_DOES_NOT_EXIST": "Usuario no existe",
+    "PASSWORDS_DONT_MATCH": "Las contraseñas no coinciden",
+    "PASSWORD_TOO_SHORT_MIN_5": "Contraseña muy corta, mínimo 5 caracteres",
+    "BLOCKED_USER": "Demasiados intentos fallidos, usuario bloqueado temporalmente",
+    "SERVER_TIMEOUT_CONNECTION_ERROR": "El servidor no está respondiendo, error de conexión",
+    "404": "404 Página no encontrada",
+    "EMAIL_IS_NOT_VALID": "E-mail no válido",
+    "IS_EMPTY": "Campos vacíos",
+    "ERROR": "Error",
+    "MISSING": "Campos faltantes",
+    "NOT_FOUND_OR_ALREADY_VERIFIED": "No encontrado o ya fue verificado",
+    "NOT_FOUND_OR_ALREADY_USED": "No encontrado o ya fue usado",
+    "NOT_FOUND": "No encontrado",
+    "UNAUTHORIZED": "No autorizado",
+    "EMAIL_ALREADY_EXISTS": "E-mail ya existe",
+    "ID_MALFORMED": "ID malformado",
+    "ERROR_WITH_FILTER": "Error con el filtro",
+    "CITY_ALREADY_EXISTS": "Ciudad ya existe"
+  },
+  "common": {
+    "DELETE": "Eliminar",
+    "CANCEL": "Cancelar",
+    "WARNING": "Advertencia",
+    "DO_YOU_REALLY_WANT_TO_DELETE_THIS_ITEM": "¿Realmente deseas eliminar este registro?",
+    "CLOSE": "Cerrar",
+    "SAVED_SUCCESSFULLY": "Guardado exitosamente",
+    "DELETED_SUCCESSFULLY": "Eliminado exitosamente",
+    "CREATED": "Fecha de Creación",
+    "UPDATED": "Fecha de Actualización",
+    "GO_BACK": "Volver"
+  },
+  "loading": {
+    "PLEASE_WAIT": "Por favor espere..."
+  },
+  "footer": {
+    "MADE_WITH": "Hecho con",
+    "BY": "por"
+  },
+  "myProfile": {
+    "TITLE": "Mi Perfil"
+  },
+  "login": {
+    "TITLE": "Ingresar",
+    "EMAIL": "E-mail",
+    "PASSWORD": "Contraseña",
+    "LOGIN": "Ingresar"
+  }
+}
